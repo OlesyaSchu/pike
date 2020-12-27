@@ -1,28 +1,50 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+	<div id="app">
+		<Header />
+		<router-view></router-view>
+	</div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Header from './components/Header'
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
+	name: 'App',
+	data() {
+		return {
+			sortFilmBy: 0,
+		}
+	},
+	components: {
+		Header, 
+	},
+	methods: {
+		sortBy: function (sortBy) {
+			this.sortFilmBy = sortBy;
+			console.log(this.sortFilmBy);
+		}
+	}
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+	@import "../public/styles/variables";
+	#app {
+		width: 100vw;
+		background-color: $background-color;
+		min-height: 100vh;
+	}
+
+	body {
+		overflow: overlay;
+		scrollbar-width: 8px;
+		scrollbar-color: $logo-color;
+
+		&::-webkit-scrollbar {
+			width: 8px;
+			&-thumb {
+				border-radius: 8px;
+				background-color: $logo-color;
+			}
+		}
+	}
 </style>
