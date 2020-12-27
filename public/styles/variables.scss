@@ -1,0 +1,41 @@
+// ------------------- Colors --------------------
+$header-color: rgba(250, 40, 40, 0.98);
+$logo-color: #000000;
+$background-color: #363232;
+$navigation-color: rgba(255, 82, 82, 0.98);
+$heading-color: #FFF;
+$paragraph-color: #E5E5E5;
+$poster-background-color: #C4C4C4;
+$information-color: #988F8F;
+$movie-background-color:  #4D4747;
+
+// ------------------- Sizes --------------------
+$content-width: 72.916vw;
+$movie-information-width: 64.166vw;
+$header-height: 10.6vh;
+
+
+// ------------------- Extensions --------------------
+%wrapper {
+	width: $content-width;
+	margin: 0 auto;
+}
+
+%information-text {
+	font-family: 'Roboto Regular';
+	font-size: 12px;
+	color: $paragraph-color;
+}
+
+%flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+%loader {
+	position: absolute;
+		left: 50%;
+		top: calc(50% + 7.6vh);
+		transform: translate(-50%, -50%);
+}
